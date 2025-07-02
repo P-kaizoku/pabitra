@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import UpperRibbon from "@/components/UpperRibbon";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"], weight: "400" });
 
@@ -35,11 +37,12 @@ export default function RootLayout({
       <body
         className={`antialiased ${inter.className} bg-background text-foreground transition-colors duration-300 ease-in-out`}
       >
+        <UpperRibbon />
         {children}
-
         <div className="fixed inset-x-0 bottom-4 z-50">
           <Navbar />
         </div>
+        <Footer />
       </body>
     </html>
   );

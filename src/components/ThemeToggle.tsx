@@ -28,7 +28,7 @@ export default function ThemeToggle() {
 
   return (
     <button
-      className="hover:border-accent flex items-center justify-center rounded-full border-2 border-transparent p-1 transition-transform duration-200 ease-in-out hover:scale-125 hover:border-2"
+      className="flex items-center justify-center rounded-full p-1 transition-transform duration-200 ease-in-out hover:scale-120"
       onClick={toggleTheme}
     >
       {theme === "dark" ? <SunIcon /> : <MoonIcon />}

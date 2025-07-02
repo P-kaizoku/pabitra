@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const ProjectCard = () => {
   return (
-    <section className="border-muted-foreground h-fit w-full rounded-2xl border-1 p-4">
+    <section className="h-fit w-full rounded-2xl border-1 border-neutral-600 p-4 dark:border-neutral-400">
       <h2 className="text-2xl font-semibold">Project title</h2>
       <p className="text-muted-foreground mt-2 mb-4 text-sm">Description</p>
       <div className="w-full overflow-hidden rounded-xl">
