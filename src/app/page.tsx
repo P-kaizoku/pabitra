@@ -1,9 +1,8 @@
 import Image from "next/image";
 import React from "react";
-import MangaAvatar from "@/assets/mangaAvatarNoBg.png";
-import ProjectCard from "@/components/ProjectCard";
+import pfp from "@/assets/pfp.jpg";
 import { Montserrat } from "next/font/google";
-import Link from "next/link";
+import ProjectSkills from "@/components/ProjectSkills";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -13,36 +12,24 @@ const montserrat = Montserrat({
 
 const page = () => {
   return (
-    <main className="mx-auto min-h-screen w-full max-w-2xl px-8 py-12">
-      <section className="mb-10 flex">
-        <div className="cursor-default bg-gradient-to-br from-neutral-700 to-neutral-500 bg-clip-text text-transparent dark:from-neutral-300 dark:to-neutral-500">
-          <p className="text-sm">Hi there, I am</p>
-          <h1 className="text-6xl leading-13">Pabitra Mondal</h1>
-          <p className="text-md text-muted-foreground pt-1 leading-5 tracking-tight">
-            I am a fullstack developer, specializing in building modern
-            websites.
+    <main className="mx-auto min-h-screen w-full max-w-2xl py-12">
+      <section className="flex flex-col items-center justify-around gap-4 border-b-2 border-neutral-300 pb-8 md:flex-row dark:border-neutral-700">
+        <div className="w-fit overflow-hidden rounded-full border-2 border-neutral-800 dark:border-neutral-200">
+          <Image src={pfp} alt="profile photo" height={150} />
+        </div>
+        <div>
+          <h1 className="text-xl font-bold tracking-tight text-neutral-700 md:text-3xl dark:text-neutral-50">
+            Hi, I am
+          </h1>
+          <p className="text-3xl tracking-tighter text-neutral-800 md:text-5xl dark:text-neutral-200">
+            Pabitra Mondal
           </p>
-          <div className="text-md text-muted-foreground mt-2 tracking-tight">
-            Wanna hire me? <br />
-            <p className="mt-2 w-fit rounded-xl bg-neutral-800/80 px-4 py-2 text-neutral-200 dark:bg-neutral-300 dark:text-neutral-600">
-              <Link href="/contact">Let&apos;s talk</Link>
-            </p>
-          </div>
-        </div>
-        <div className="ring-foreground overflow-hidden rounded-full ring-1 transition-colors duration-300 hover:bg-red-700">
-          <Image src={MangaAvatar} alt="profile photo" height={400} />
+          <p className="mt-2 text-sm text-neutral-600 md:text-lg dark:text-neutral-400">
+            Engineering student, developer.
+          </p>
         </div>
       </section>
-      <section></section>
-      <section className="mt-30 flex flex-col">
-        <div className="mx-auto w-fit rounded-xl px-2 py-1 text-2xl tracking-tight">
-          <h2 className={`${montserrat.className}`}>Featured Projects</h2>
-        </div>
-        <div className="grid grid-cols-1 gap-4 p-4 font-[montserrat] sm:grid-cols-2">
-          <ProjectCard />
-          <ProjectCard />
-        </div>
-      </section>
+      <ProjectSkills />
     </main>
   );
 };
