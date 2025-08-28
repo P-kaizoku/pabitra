@@ -33,9 +33,9 @@ const Navbar = () => {
               <Home />
             </Link>
           </li>
-          <li>
+          {/* <li>
             <ThemeToggle />
-          </li>
+          </li> */}
         </div>
         <li className="h-6 w-px bg-neutral-400 dark:bg-neutral-600"></li>
         {linkLeft.map((link) => (

@@ -130,7 +130,7 @@
 }
 
 .dark {
-  --background: oklch(0.2 0 0);
+  --background: #1e1e1e;
   --foreground: oklch(96.05 0 0);
   --card: oklch(0.1913 0 0);
   --card-foreground: oklch(1 0 0);
@@ -190,4 +190,14 @@
 }
 
 @layer base {
+}
+
+body {
+  transition: all 0.3s ease-in-out;
+}
+
+.transition-page {
+  opacity: 0;
+  transform: translateY(10px);
+  filter: blur(10px);
 }

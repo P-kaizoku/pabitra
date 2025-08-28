@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// import { Inter } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+// import Navbar from "@/components/Navbar";
 import UpperRibbon from "@/components/UpperRibbon";
-import Footer from "@/components/Footer";
-
-const inter = Inter({ subsets: ["latin"], weight: "400" });
+// import Footer from "@/components/Footer";
+import Navbar2 from "@/components/Navbar2";
+import { Anonymous_Pro } from "next/font/google";
+const anonymousPro = Anonymous_Pro({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Pabitra's Developer Portfolio",
@@ -35,14 +36,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased ${inter.className} bg-background text-foreground transition-colors duration-300 ease-in-out`}
+        className={`bg-background text-foreground relative antialiased transition-colors duration-300 ease-in-out ${anonymousPro.className}`}
       >
         <UpperRibbon />
         {children}
-        <div className="fixed inset-x-0 bottom-4 z-50">
-          <Navbar />
-        </div>
-        <Footer />
+        <Navbar2 />
+        {/* <div className="fixed inset-x-0 bottom-4 z-50"><Navbar />
+        </div> */}
+        {/* <Footer /> */}
       </body>
     </html>
   );

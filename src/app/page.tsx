@@ -1,36 +1,96 @@
-import Image from "next/image";
 import React from "react";
 import pfp from "@/assets/pfp.jpg";
-import { Montserrat } from "next/font/google";
-import ProjectSkills from "@/components/ProjectSkills";
-
-const montserrat = Montserrat({
-  subsets: ["latin"],
-  weight: "600",
-  variable: "--font-montserrat",
-});
+import Image from "next/image";
+import ThemeToggle from "@/components/ThemeToggle";
+import Link from "next/link";
+import Github from "@/assets/github.png";
+import Twitter from "@/assets/twitter.png";
+import Linkedin from "@/assets/linkedin.png";
 
 const page = () => {
   return (
-    <main className="mx-auto min-h-screen w-full max-w-2xl py-12">
-      <section className="flex flex-col items-center justify-around gap-4 border-b-2 border-neutral-300 pb-8 md:flex-row dark:border-neutral-700">
-        <div className="w-fit overflow-hidden rounded-full border-2 border-neutral-800 dark:border-neutral-200">
-          <Image src={pfp} alt="profile photo" height={150} />
+    <div className={`flex min-h-screen flex-col items-center pt-[190px]`}>
+      <ProfileCard
+        name="Pabitra Mondal"
+        profileImg={pfp}
+        catchphrase="Engineer student, developer."
+      />
+      <SocialLinks />
+    </div>
+  );
+};
+
+const ProfileCard = ({
+  name,
+  profileImg,
+  catchphrase,
+}: {
+  name: string;
+  profileImg: any;
+  catchphrase: string;
+}) => {
+  return (
+    <div className="flex flex-col items-center justify-center space-y-[17px]">
+      <ThemeToggle />
+      <div className="w-[213px] overflow-hidden rounded-full shadow-[0px_0px_55px_0px_#718096]">
+        <Image src={profileImg} alt={`${name}'s profile`} />
+      </div>
+      <h2 className="bg-gradient-to-r from-neutral-600 to-neutral-500 bg-clip-text text-[48px] leading-[32px] tracking-tighter text-transparent dark:from-[#ffffff] dark:to-[#999999]">
+        {name}
+      </h2>
+      <p>{catchphrase}</p>
+    </div>
+  );
+};
+
+const SocialLinks = () => {
+  return (
+    <section className="mt-2">
+      <div className="flex items-center space-x-2">
+        <div>
+          <Link
+            href="https://github.com/P-kaizoku"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={Github}
+              alt="GitHub"
+              width={24}
+              className="dark:invert"
+            />
+          </Link>
         </div>
         <div>
-          <h1 className="text-xl font-bold tracking-tight text-neutral-700 md:text-3xl dark:text-neutral-50">
-            Hi, I am
-          </h1>
-          <p className="text-3xl tracking-tighter text-neutral-800 md:text-5xl dark:text-neutral-200">
-            Pabitra Mondal
-          </p>
-          <p className="mt-2 text-sm text-neutral-600 md:text-lg dark:text-neutral-400">
-            Engineering student, developer.
-          </p>
+          <Link
+            href="https://x.com/hecodes0_0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={Twitter}
+              alt="Twitter"
+              width={20}
+              className="ml-2 dark:invert"
+            />
+          </Link>
         </div>
-      </section>
-      <ProjectSkills />
-    </main>
+        <div>
+          <Link
+            href="https://www.linkedin.com/in/pabitra-mondal-13ba85270/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src={Linkedin}
+              alt="LinkedIn"
+              width={20}
+              className="ml-2 dark:invert"
+            />
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 };
 
